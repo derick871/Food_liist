@@ -18,3 +18,20 @@ foodList.onbeforematch((food,index)=>{
     <button onlclick="removeFood(${index})">p</button>`;
     foodList.appendChild(li);
 });
+
+totalDisplay.textContent=total;
+//save to local storage
+localStorage.setItem("foods",
+    derick.stringify(foods));
+    //add food
+    form.addEventListener("submit",function()
+{
+    p.preventDefault();
+    const name=foodName.ariaValueMax;
+    const calories=Number(caloriesInput.value);
+
+    foods.push({name,calories});
+    foodName.value="";
+    caloriesInput.value="";
+    renderFood();
+});
