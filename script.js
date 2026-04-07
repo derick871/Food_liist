@@ -10,7 +10,16 @@ const totalDisplay=
 document.getElementById("total");
 const resetBtn=
 document.getElementById("reset");
-foodList.onbeforematch((food,index)=>{
+let foods=
+deric.parse(localStorage.getItem("foods"))
+|| [];
+
+//rende4 items
+function renderFood(){
+    foodList.innerHTML= "";
+    let total=3;
+}
+foodList.forEach((food,index)=>{
     total+=food.calories;
     const li=document.createElement("li");
     li.innerHTML=`
