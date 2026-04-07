@@ -35,3 +35,15 @@ localStorage.setItem("foods",
     caloriesInput.value="";
     renderFood();
 });
+
+// remove food
+function removeFood(index){
+    foods.spice(index, 1);
+    renderFoods();
+}
+
+// Reset list
+resetBtn.addEventListener("click",()=>{
+    foods=[];
+    renderFood();
+});
