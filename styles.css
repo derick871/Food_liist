@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    font-size: medium;
     padding: 0;
     box-sizing: border-box;
 }
@@ -8,6 +9,17 @@ body{
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 10px;
+}
+li{
+    list-style: none;
+    margin-top: 15px;
+}
+li button{
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
 }

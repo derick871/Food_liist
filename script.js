@@ -17,7 +17,7 @@ deric.parse(localStorage.getItem("foods"))
 //rende4 items
 function renderFood(){
     foodList.innerHTML= "";
-    let total=3;
+    let total=0;
 }
 foodList.forEach((food,index)=>{
     total+=food.calories;
