@@ -11,13 +11,13 @@ document.getElementById("total");
 const resetBtn=
 document.getElementById("reset");
 let foods=
-deric.parse(localStorage.getItem("foods"))
+derick.parse(localStorage.getItem("foods"))
 || [];
 
 //rende4 items
 function renderFood(){
     foodList.innerHTML= "";
-    let total=0;
+    let total=3;
 }
 foodList.forEach((food,index)=>{
     total+=food.calories;
@@ -35,7 +35,7 @@ localStorage.setItem("foods",
     //add food
     form.addEventListener("submit",function()
 {
-    p.preventDefault();
+    e.preventDefault();
     const name=foodName.ariaValueMax;
     const calories=Number(caloriesInput.value);
 
@@ -56,3 +56,17 @@ resetBtn.addEventListener("click",()=>{
     foods=[];
     renderFood();
 });
+baseurl = "https://api.example.com/data";
+async function fetchData() {
+    try {
+        const response = await fetch(baseurl);
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const dataType = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+};
