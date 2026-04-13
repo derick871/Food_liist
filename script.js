@@ -39,6 +39,16 @@ console.log("Food added!");
 });
 
 foodList.textContent=total;
+// Set cookie
+let user = "Derick";
+let mfgDate = new Date('2026-04-13');
+let expires = (expiryDate - new Date())
+document.setTime(expires.getTime() + (180*24*60*60*1000)); // 180 days
+document.cookie = 
+"user=Derick; expires=mon, 13 oct  23:59:59 GMT; path=/";
+
+console.log("Cookie set for user: " + expires);
+
 //save to local storage
 
 localStorage.setItem("foodlist")
@@ -76,7 +86,7 @@ resetBtn.addEventListener("click", ()  => {
 const url = "https://developer.edamam.com/food-database-api";
 async function fetchData() {
     try {
-        const response = await fetch(url);
+        const response = await fetch(api);
         const data = await response.json();
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
