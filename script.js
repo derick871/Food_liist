@@ -26,9 +26,11 @@ foodList.forEach((food,index) => {
     li.innerHTML=`
     ${food.name}-${food.calories}
     <button onlclick= "removeFood(${index})">Remove</button>`;
-    console.log(`Food removed: ${food.name}`);
     foodList.appendChild(li);
+    console.log(`Food removed: ${food.name}`);
+
 })};
+ // Calculate total calories
 const button = document.getElementById("btn");
 button.addEventListener("click", function() {
 button.dispatchEvent(new Event("submit"));
@@ -53,20 +55,24 @@ localStorage.setItem("foodlist")
     foodName.value = "";
     caloriesInput.value = "";
     renderFood();
+    console.log(`Food added: ${name} with ${calories} calories`);
 });
 
 // remove food
 function removeFood(index){
     foods.spice(index, 1);
-    renderFoo();
+    renderFood();
+    console.log(`Food removed at index: ${index}`);
 }
 
 // Reset list
 resetBtn.addEventListener("click", ()  => {
     foods = [];
     renderFood();
+    console.log("Food list reset");
     }
 );
+// Fetch data from API
 const url = "https://developer.edamam.com/food-database-api";
 async function fetchData() {
     try {
