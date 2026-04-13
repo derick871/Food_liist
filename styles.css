@@ -26,3 +26,9 @@ li button{
     cursor: pointer;
     margin-left: 10px;
 }
+#food-form{
+    background:brown;
+    padding: 20px;
+    border-radius: 10px;
+    color: #000;
+}
