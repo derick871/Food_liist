@@ -25,12 +25,15 @@ foodList.forEach((food,index) => {
     const li= document.createElement("li");
     li.innerHTML=`
     ${food.name}-${food.calories}
-    <button onlclick= "removeFood(${index})">p</button>`;
+    <button onlclick= "removeFood(${index})">Remove</button>`;
+    console.log(`Food removed: ${food.name}`);
     foodList.appendChild(li);
 })};
 const button = document.getElementById("btn");
 button.addEventListener("click", function() {
 button.dispatchEvent(new Event("submit"));
+alert("Food added!");
+console.log("Food added!");
 });
 
 foodList.textContent=total;
@@ -64,10 +67,10 @@ resetBtn.addEventListener("click", ()  => {
     renderFood();
     }
 );
-baseurl = "https://api.example.com/data";
+const url = "https://developer.edamam.com/food-database-api";
 async function fetchData() {
     try {
-        const response = await fetch(baseurl);
+        const response = await fetch(url);
         const data = await response.json();
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

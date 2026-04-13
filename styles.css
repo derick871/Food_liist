@@ -6,8 +6,8 @@
     box-sizing: border-box;
 }
 body{
-    background: #7bb852 ;
-    color: white;
+    background: amber;
+    color: rgb(26, 25, 25);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -42,4 +42,18 @@ h1{
     padding: 20px;
     border-radius: 10px;
     color: #fff;
+}
+span1{
+    color: brown;
+    font-style: italic;
+    font: bold;
+    font-size: xx-large;
+}
+#calories-list{ 
+    margin-top: 20px;
+    border-radius: 20px;
+    background: lightsalmon;
+    padding: 20px;
+
+
 }

@@ -9,13 +9,14 @@
 </head>
 <body>
     <div>
+        <div id="calories-list">
         <div id="container">
-        <h1>Calorie tracker</h1><br>
+        <h1><span1>Calorie tracker</span></h1><br>
         <!--------form----->
 
         <div id="food-form">
         <form method="submit">
-            <label for="food">Food: </label>
+         <label for="food">Food: </label>
             <input
              type="text"
              id ="food-name"
@@ -27,9 +28,10 @@
             id ="calories" 
             placeholder="calories"
             required>  <br><br>
+            
             <button type="submit" id="btn">Add food </button>
         </form>
-    </div>
+     </div>
 
         <div>
         <div>
@@ -38,8 +40,9 @@
         </div><br>
         <h3>Total Calories: <span id="total">0</span></h3><br>
 
-        <button id="reset">Reset</button>
+        <button  id="reset">Reset List</button>
        </div>
+        </div>
         </div>
     </div>
 </body>
