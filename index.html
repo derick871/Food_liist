@@ -12,21 +12,33 @@
         <div id="container">
         <h1>Calorie tracker</h1>
         <!--------form----->
-        <form id="food-form">
-            <input type="text"id="food-name" placeholder="food-name"required> <br>
-            <input type="number"id="calories"placeholder="calories"required>  <br>
-            <button type="submit">add</button>
-        </form>
 
         <div>
-            <ul id="food-list">
-                <li>fries</li>
-                <li>pizza</li>
-                <li>chapati</li>
+        <form id="food-form" method="submit">
+            <label for="food">Food: </label>
+            <input
+             type="text"
+             id ="food-name"
+              placeholder="food-name"
+              required> <br>
+            <label for="calories">Calories:</label>
+            <input 
+            type="number"
+            id ="calories" 
+            placeholder="calories"
+            required>  <br>
+            <button type="submit" id="btn">Add</button>
+        </form>
+    </div>
+
+        <div>
+        <div>
+               <ul id="food-list">
             </ul>
         </div>
-        <h3>Total Calories: <span id="total">3</span></h3>
+        <h3>Total Calories: <span id="total">0</span></h3>
         <button id="reset">Reset</button>
+       </div>
         </div>
     </div>
 </body>

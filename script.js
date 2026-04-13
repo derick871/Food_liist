@@ -11,51 +11,59 @@ document.getElementById("total");
 const resetBtn=
 document.getElementById("reset");
 let foods=
-derick.parse(localStorage.getItem("foods"))
+foodList.parse(localStorage.getItem("foodlist"))
 || [];
 
-//rende4 items
-function renderFood(){
-    foodList.innerHTML= "";
-    let total=3;
-}
-foodList.forEach((food,index)=>{
-    total+=food.calories;
-    const li=document.createElement("li");
+alert("Welcome to the Calorie Tracker!");
+console.log("Welcome to the Calorie Tracker!");
+
+//render items
+function renderFood() {
+    let total = 0;
+foodList.forEach((food,index) => {
+    total += food.calories;
+    const li= document.createElement("li");
     li.innerHTML=`
     ${food.name}-${food.calories}
-    <button onlclick="removeFood(${index})">p</button>`;
+    <button onlclick= "removeFood(${index})">p</button>`;
     foodList.appendChild(li);
+})};
+const button = document.getElementById("btn");
+button.addEventListener("click", function() {
+button.dispatchEvent(new Event("submit"));
 });
 
-totalDisplay.textContent=total;
+foodList.textContent=total;
 //save to local storage
-localStorage.setItem("foods",
-    derick.stringify(foods));
+
+localStorage.setItem("foodlist")
+    JSON.stringify(foods);
+
     //add food
     form.addEventListener("submit",function()
 {
     e.preventDefault();
-    const name=foodName.ariaValueMax;
-    const calories=Number(caloriesInput.value);
+    const name = foodName.ariaValueMax;
+    const calories = Number(caloriesInput.value);
 
     foods.push({name,calories});
-    foodName.value="";
-    caloriesInput.value="";
+    foodName.value = "";
+    caloriesInput.value = "";
     renderFood();
 });
 
 // remove food
 function removeFood(index){
     foods.spice(index, 1);
-    renderFoods();
+    renderFoo();
 }
 
 // Reset list
-resetBtn.addEventListener("click",()=>{
-    foods=[];
+resetBtn.addEventListener("click", ()  => {
+    foods = [];
     renderFood();
-});
+    }
+);
 baseurl = "https://api.example.com/data";
 async function fetchData() {
     try {
